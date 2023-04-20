@@ -31,23 +31,8 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2022.10"
 
 project {
-
-    buildType(Blahblah)
     buildType(Build)
 }
-
-object Blahblah : BuildType({
-    name = "Blahblah"
-
-    vcs {
-        root(DslContext.settingsRoot)
-    }
-
-    dependencies {
-        snapshot(Build) {
-        }
-    }
-})
 
 object Build : BuildType({
     name = "Build"
