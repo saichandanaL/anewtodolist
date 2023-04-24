@@ -70,4 +70,9 @@ object Myvcsroot : GitVcsRoot({
     name = "settings file"
     url = "https://github.com/saichandanaL/settings.git"
     branch = "refs/heads/main"
+    authMethod = password {
+        userName = "saichandanal"
+        password = "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"
+    }
 })
+
