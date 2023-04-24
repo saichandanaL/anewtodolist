@@ -39,9 +39,7 @@ object Build : BuildType({
 
     artifactRules = "target/*.jar"
 
-    vcs {
-        root(MyVcsRoot)
-    }
+    vcsRoot(MyVcsRoot)
 
     steps {
         maven {
