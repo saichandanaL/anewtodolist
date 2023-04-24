@@ -72,7 +72,7 @@ object Myvcsroot : GitVcsRoot({
     branch = "refs/heads/main"
     authMethod = password {
         userName = "saichandanal"
-        password = "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"
+        password = "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"
     }
 })
 
