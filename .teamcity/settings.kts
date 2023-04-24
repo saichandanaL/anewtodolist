@@ -69,7 +69,6 @@ object Build : BuildType({
     }
 })
 
-    // url = DslContext.getParameter("vcsUrl")
 
 object MyVcsRoot: GitVcsRoot({
     name = "Settings from external repo"
