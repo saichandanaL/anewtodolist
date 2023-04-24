@@ -49,10 +49,6 @@ object Build : BuildType({
             goals = "clean package"
             dockerImage = "maven:latest"
         }
-        script {
-            name = "qqq"
-            scriptContent = "docker run --rm -v ${'$'}PWD:/workdir jetbrains/intellij-http-client -D run.http --report"
-        }
     }
 
     triggers {
