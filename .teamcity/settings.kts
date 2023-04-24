@@ -31,7 +31,9 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2022.10"
 
 project {
+
     vcsRoot(Myvcsroot)
+
     buildType(Build)
 }
 
