@@ -31,7 +31,6 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2022.10"
 
 project {
-    vcsRoot(MyVcsRoot)
     buildType(Build)
 }
 
@@ -41,7 +40,7 @@ object Build : BuildType({
     artifactRules = "target/*.jar"
 
     vcs {
-        root(MyVcsRoot)
+        root(DslContext.settingsRoot)
     }
 
     steps {
@@ -68,11 +67,4 @@ object Build : BuildType({
             rules = "reports/**/*.xml"
         }
     }
-})
-
-
-object MyVcsRoot: GitVcsRoot({
-    name = "${DslContext.getParameter("name", "settings")}"
-    url = "https://github.com/saichandanaL/settings.git"
-    branchSpec = "+:refs/heads/*"
 })
