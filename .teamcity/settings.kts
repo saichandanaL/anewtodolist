@@ -70,8 +70,8 @@ object Build : BuildType({
 })
 
 
-object MyVcsRoot: GitVcsRoot({
-    name = "Settings from external repo"
+object MyVcsRoot: BuildType({
+    name = "${DslContext.getParameter("BuildName", "Test Build")}"
     url = "https://github.com/saichandanaL/settings.git"
     branchSpec = "+:refs/heads/*"
 })
