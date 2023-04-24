@@ -31,8 +31,8 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2022.10"
 
 project {
-    buildType(Build)
     vcsRoot(MyVcsRoot)
+    buildType(Build)
 }
 
 object Build : BuildType({
@@ -40,6 +40,9 @@ object Build : BuildType({
 
     artifactRules = "target/*.jar"
 
+    vcs {
+        root(MyVcsRoot)
+    }
 
     steps {
         maven {
