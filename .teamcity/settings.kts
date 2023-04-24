@@ -2,10 +2,9 @@ import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.XmlReport
 import jetbrains.buildServer.configs.kotlin.buildFeatures.xmlReport
 import jetbrains.buildServer.configs.kotlin.buildSteps.maven
-import jetbrains.buildServer.configs.kotlin.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.triggers.schedule
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
-import jetbrains.buildServer.configs.kotlin.triggers.GitVcsRoot
+import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -32,6 +31,7 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2022.10"
 
 project {
+    vcsRoot(Myvcsroot)
     buildType(Build)
 }
 
@@ -39,10 +39,6 @@ object Build : BuildType({
     name = "Build"
 
     artifactRules = "target/*.jar"
-
-    vcs {
-        root(PluginRepo)
-    }
 
     steps {
         maven {
@@ -70,14 +66,8 @@ object Build : BuildType({
     }
 })
 
-object PluginRepo : GitVcsRoot({
-
-   name = "${DslContext.getParameter("repoName")} Repo"
-   url = DslContext.getParameter("fetchUrl")
-   branchSpec = "+:refs/heads/*"
-   authMethod = uploadedKey {
-       uploadedKey = "id_rsa"
-
-   }
-
+object Myvcsroot : GitVcsRoot({
+    name = "settings file"
+    url = "https://github.com/saichandanaL/settings.git"
+    branch = "refs/heads/main"
 })
