@@ -40,7 +40,7 @@ object Build : BuildType({
     artifactRules = "target/*.jar"
 
     vcs {
-        root(DslContext.settingsRoot)
+        root(PluginRepo)
     }
 
     steps {
@@ -67,4 +67,16 @@ object Build : BuildType({
             rules = "reports/**/*.xml"
         }
     }
+})
+
+object PluginRepo : GitVcsRoot({
+
+   name = "${DslContext.getParameter("repoName")} Repo"
+   url = DslContext.getParameter("fetchUrl")
+   branchSpec = "+:refs/heads/*"
+   authMethod = uploadedKey {
+       uploadedKey = "id_rsa"
+
+   }
+
 })
