@@ -69,7 +69,7 @@ object Build : BuildType({
 })
 
 object Myvcsroot : GitVcsRoot({
-    name = "settings repo"
+    name = DslContext.getParameter("name","settings")
     url = "https://github.com/saichandanaL/settings.git"
     branch = "refs/heads/main"
     authMethod = password {
