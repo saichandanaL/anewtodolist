@@ -5,10 +5,7 @@ import jetbrains.buildServer.configs.kotlin.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.triggers.schedule
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
-@file:DependsOn("org.jetbrains.teamcity:teamcity-kotlin-dsl:2020.1.1")
-
-import org.jetbrains.teamcity.dsl.*
-
+import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
 
 /*
 The settings script is an entry point for defining a TeamCity
