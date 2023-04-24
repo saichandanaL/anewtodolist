@@ -67,7 +67,7 @@ object Build : BuildType({
 })
 
 object Myvcsroot : GitVcsRoot({
-    name = "settings file"
+    name = "settings repo"
     url = "https://github.com/saichandanaL/settings.git"
     branch = "refs/heads/main"
     authMethod = password {
