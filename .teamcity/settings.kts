@@ -40,7 +40,7 @@ object Build : BuildType({
     artifactRules = "target/*.jar"
 
     vcs {
-        root(DslContext.settingsRoot)
+        root(MyVcsRoot)
     }
 
     steps {
@@ -70,8 +70,8 @@ object Build : BuildType({
 })
 
 
-object MyVcsRoot: BuildType({
-    name = "${DslContext.getParameter("BuildName", "Test Build")}"
+object MyVcsRoot: GitVcsRoot({
+    name = "${DslContext.getParameter("name", "settings")}"
     url = "https://github.com/saichandanaL/settings.git"
     branchSpec = "+:refs/heads/*"
 })
