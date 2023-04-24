@@ -69,8 +69,10 @@ object Build : BuildType({
     }
 })
 
+// url = "https://github.com/saichandanaL/settings.git"
+
 object MyVcsRoot: GitVcsRoot({
     name = "Settings from external repo"
-    url = "https://github.com/saichandanaL/settings.git"
+    url = DslContext.getParameter("vcsUrl")
     branchSpec = "+:refs/heads/*"
 })
