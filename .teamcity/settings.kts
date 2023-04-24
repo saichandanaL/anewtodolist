@@ -32,6 +32,7 @@ version = "2022.10"
 
 project {
     buildType(Build)
+    vcsRoot(MyVcsRoot)
 }
 
 object Build : BuildType({
@@ -39,7 +40,6 @@ object Build : BuildType({
 
     artifactRules = "target/*.jar"
 
-    vcsRoot(MyVcsRoot)
 
     steps {
         maven {
