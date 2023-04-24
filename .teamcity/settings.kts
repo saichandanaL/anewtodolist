@@ -70,7 +70,7 @@ object Build : BuildType({
 })
 
 object MyVcsRoot: GitVcsRoot({
-    name = "GitHub Issues Plugin Repo"
+    name = "Settings from external repo"
     url = "https://github.com/saichandanaL/settings.git"
     branchSpec = "+:refs/heads/*"
 })
