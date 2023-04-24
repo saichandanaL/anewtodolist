@@ -31,7 +31,9 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2022.10"
 
 project {
+
     vcsRoot(Myvcsroot)
+
     buildType(Build)
 }
 
@@ -72,7 +74,6 @@ object Myvcsroot : GitVcsRoot({
     branch = "refs/heads/main"
     authMethod = password {
         userName = "saichandanal"
-        password = "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"
+        password = "credentialsJSON:664b3a95-e60b-4a04-84f6-2721921f0c19"
     }
 })
-
