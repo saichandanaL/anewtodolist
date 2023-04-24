@@ -75,4 +75,3 @@ object Myvcsroot : GitVcsRoot({
         password = "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"
     }
 })
-
