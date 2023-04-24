@@ -4,6 +4,7 @@ import jetbrains.buildServer.configs.kotlin.buildFeatures.xmlReport
 import jetbrains.buildServer.configs.kotlin.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.triggers.schedule
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
+import jetbrains.buildServer.configs.kotlin.ui.changeVcsRoot
 import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 
 /*
@@ -39,6 +40,10 @@ project {
 
 object Build : BuildType({
     name = "Build"
+
+    vcs {
+        root(Myvcsroot)
+    }
 
     artifactRules = "target/*.jar"
 
